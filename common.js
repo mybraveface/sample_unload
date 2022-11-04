@@ -1,11 +1,16 @@
+var func = () => {
+};
+
 // 追加ボタン
 $("#add_unload").on("click", () => {
-    $(window).on("unload", () => {});
+    $("#result").append(new Date() + " : unloadイベント追加<br>");
+    window.addEventListener("unload", func);
 });
 
 // 削除ボタン
 $("#add_unload").on("click", () => {
-    $(window).off("unload");
+    $("#result").append(new Date() + " : unloadイベント削除<br>");
+    window.removeEventListener("unload", func);
 });
 
 $(document).ready(() => {
